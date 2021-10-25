@@ -13,10 +13,12 @@ public class DBConnection {
 		// TODO Auto-generated method stub
 		DBConnection obj=new DBConnection();
 		obj.dbOperation();
+		
 	}
 
 	
 	public void dbOperation() {
+		System.out.println("DB Data Fetching Operation");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			try {
@@ -26,6 +28,7 @@ public class DBConnection {
 				while(resultobj.next()) {
 					System.out.println(resultobj.getString(2));
 					System.out.println(resultobj.getInt(1));
+	
 				}
 				
 			} catch (SQLException e) {
